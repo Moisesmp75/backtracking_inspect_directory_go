@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
 var (
@@ -29,5 +30,9 @@ func inspectDirectory(path string, isDir bool) {
 }
 
 func main() {
+	startTime := time.Now()
 	inspectDirectory(file_path, true)
+	endTime := time.Now()
+	duration := endTime.Sub(startTime)
+	fmt.Println("Tiempo transcurrido:", duration)
 }
